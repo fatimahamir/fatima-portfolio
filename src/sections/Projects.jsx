@@ -31,7 +31,7 @@ const Projects = () => {
       description: 'Designed and Developed the interface for School website using REACT and Bootstrap. Implement Application Form',
       image: school,
       category: 'Frontend',
-      tech: ['React.js', 'Bootstrap',],
+      tech: ['React.js', 'Bootstrap'],
       codeLink: 'https://github.com/fatimahamir/loginschoolapp',
       liveLink: 'https://fatimahamir.github.io/loginschoolapp/'
     },
@@ -41,14 +41,14 @@ const Projects = () => {
       description: 'Designed and Developed the interface for Airport website using REACT and Bootstrap. Implement CRUD operation',
       image: airport,
       category: 'Frontend',
-      tech: ['React.js', 'Bootstrap', 'CRUD',],
+      tech: ['React.js', 'Bootstrap', 'CRUD'],
       codeLink: 'https://github.com/fatimahamir/Airport-Mangment-system',
       liveLink: 'https://fatimahamir.github.io/Airport-Mangment-system/'
     },
     {
       id: 4,
-      title: 'Custom React Counter ',
-      description: 'A smooth animated counter built with React that dynamically updates numbers with engaging  a modern UI experience."',
+      title: 'Custom React Counter',
+      description: 'A smooth animated counter built with React that dynamically updates numbers with engaging transitions for a modern UI experience.',
       image: counter,
       category: 'Frontend',
       tech: ['React Js', 'Vite'],
@@ -57,35 +57,27 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'Inventory Mangement system',
+      title: 'Inventory Management System',
       description: 'Smart inventory manager with live stock updates, automated reorder alerts, and clean analytics for modern operations.',
-      image: stock ,
+      image: stock,
       category: 'Full Stack',
-      tech: ['NodejS', 'Mongodb Atlas', 'Express Js'],
+      tech: ['NodeJS', 'MongoDB Atlas', 'Express Js'],
       codeLink: 'https://github.com/fatimahamir/inventory-management/tree/main',
       liveLink: 'https://inventory-management-seven-virid.vercel.app/'
     }
   ];
 
-  // Filter projects
   const filteredProjects = activeFilter === 'all' 
     ? projectsData 
     : projectsData.filter(project => project.category === activeFilter);
 
-  // Update cards per view based on screen size
   useEffect(() => {
     const updateCardsPerView = () => {
-      if (window.innerWidth >= 1400) {
-        setCardsPerView(4);
-      } else if (window.innerWidth >= 992) {
-        setCardsPerView(3);
-      } else if (window.innerWidth >= 576) {
-        setCardsPerView(2);
-      } else {
-        setCardsPerView(1);
-      }
+      if (window.innerWidth >= 1400) setCardsPerView(4);
+      else if (window.innerWidth >= 992) setCardsPerView(3);
+      else if (window.innerWidth >= 576) setCardsPerView(2);
+      else setCardsPerView(1);
     };
-
     updateCardsPerView();
     window.addEventListener('resize', updateCardsPerView);
     return () => window.removeEventListener('resize', updateCardsPerView);
@@ -127,298 +119,183 @@ const Projects = () => {
   };
 
   const handleScroll = () => {
-    if (containerRef.current) {
-      setScrollPosition(containerRef.current.scrollLeft);
-    }
+    if (containerRef.current) setScrollPosition(containerRef.current.scrollLeft);
   };
 
-  const getFilterLabel = () => {
-    if (activeFilter === 'all') return 'All Projects';
-    return activeFilter;
+  const getFilterLabel = () => activeFilter === 'all' ? 'All Projects' : activeFilter;
+
+  const handleFilterChange = (filter) => {
+    setActiveFilter(filter);
+    setIsDropdownOpen(false);
   };
 
   return (
     <section 
       id="projects" 
       className="py-5 position-relative projects-section"
-      style={{ 
-        backgroundColor: "rgba(2, 26, 84, 1)",
-        minHeight: "100vh"
-      }}
+      style={{ backgroundColor: "rgba(2, 26, 84, 1)" }}
     >
       <div className="container py-4 position-relative">
         
-        {/* Header Row - Title Left, Filter Right - ALWAYS RIGHT on ALL screens */}
-        <div className="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        {/* Header: Title Left + Filter Right */}
+        <div className="d-flex flex-wrap justify-content-between align-items-center mb-4" style={{ gap: '1rem' }}>
+          
+          {/* Title - Left Side */}
           <div>
+            <span className="small d-block" style={{ color: '#FF85BB', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: '600',lineHeight:'2.4rem' }}>
+  ✦ PORTFOLIO ✦
+</span>
             <h2 
-              className="fw-bold mb-1 projects-title"
-              style={{ 
-                fontSize: "clamp(1.8rem, 5vw, 2.5rem)",
-                color: "#fff",
-                textAlign: "left"
-              }}
+              className="fw-bold mb-1 projects-title heading-underline"
+              style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)", color: "#fff", textAlign: "left" ,lineHeight: "1.2",}}
             >
               My <span style={{ color: "#FF85BB" }}>Projects</span>
-            </h2>
-            <p className="text-secondary projects-subtitle" style={{ maxWidth: "550px", margin: "0", lineHeight: "1.6", fontSize: "0.9rem" }}>
-              Here are some of my recent works. Each project represents unique challenges and creative solutions.
+            </h2> <br />
+            <p className="text-secondary projects-subtitle mt-3 " style={{ maxWidth: "400px", margin: "0", lineHeight: "1.4", fontSize: "0.85rem" }}>
+               Explore my latest projects showcasing frontend & full-stack development skills
             </p>
           </div>
 
-          {/* Desktop: Filter Buttons - Visible on ≥992px */}
-          <div className="d-none d-lg-flex gap-2 bg-dark p-2 rounded-5">
-            <button
-              onClick={() => setActiveFilter('all')}
-              className="px-3 px-md-4 py-2 rounded-pill fw-semibold border-0"
-              style={{
-                background: activeFilter === 'all' ? "#FF85BB" : "rgba(255,255,255,0.05)",
-                color: activeFilter === 'all' ? "#021A54" : "#fff",
-                transition: "all 0.3s ease",
-                fontSize: "clamp(0.7rem, 3vw, 0.85rem)",
-                cursor: "pointer"
-              }}
-              onMouseEnter={(e) => {
-                if (activeFilter !== 'all') {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (activeFilter !== 'all') {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-                }
-              }}
-            >
-              All
-            </button>
-            <button
-              onClick={() => setActiveFilter('Frontend')}
-              className="px-3 px-md-4 py-2 rounded-pill fw-semibold border-0"
-              style={{
-                background: activeFilter === 'Frontend' ? "#FF85BB" : "rgba(255,255,255,0.05)",
-                color: activeFilter === 'Frontend' ? "#021A54" : "#fff",
-                transition: "all 0.3s ease",
-                fontSize: "clamp(0.7rem, 3vw, 0.85rem)",
-                cursor: "pointer"
-              }}
-              onMouseEnter={(e) => {
-                if (activeFilter !== 'Frontend') {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (activeFilter !== 'Frontend') {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-                }
-              }}
-            >
-              Frontend
-            </button>
-            <button
-              onClick={() => setActiveFilter('Full Stack')}
-              className="px-3 px-md-4 py-2 rounded-pill fw-semibold border-0"
-              style={{
-                background: activeFilter === 'Full Stack' ? "#FF85BB" : "rgba(255,255,255,0.05)",
-                color: activeFilter === 'Full Stack' ? "#021A54" : "#fff",
-                transition: "all 0.3s ease",
-                fontSize: "clamp(0.7rem, 3vw, 0.85rem)",
-                cursor: "pointer"
-              }}
-              onMouseEnter={(e) => {
-                if (activeFilter !== 'Full Stack') {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (activeFilter !== 'Full Stack') {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-                }
-              }}
-            >
-              Full Stack
-            </button>
-          </div>
-
-          {/* Mobile/Tablet: Dropdown Menu - ALWAYS RIGHT ALIGNED in the same row */}
-          <div className="d-lg-none" ref={dropdownRef}>
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="px-4 py-2 rounded-pill fw-semibold border-0 d-flex align-items-center gap-2"
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                color: "#fff",
-                transition: "all 0.3s ease",
-                fontSize: "0.85rem",
-                cursor: "pointer"
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-              }}
-            >
-              {getFilterLabel()} <FaChevronDown style={{ fontSize: "0.7rem", transition: "transform 0.3s", transform: isDropdownOpen ? "rotate(180deg)" : "rotate(0)" }} />
-            </button>
+          {/* Filter Controls - Right Side */}
+          <div className="ms-auto" ref={dropdownRef}>
             
-            {isDropdownOpen && (
-              <div 
-                className="position-absolute end-0 mt-2 py-2 rounded-3"
+            {/* Desktop: Filter Buttons */}
+            <div className="d-none d-lg-flex gap-2 bg-dark p-1 rounded-5">
+              {['all', 'Frontend', 'Full Stack'].map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className="px-3 py-2 rounded-pill fw-semibold border-0"
+                  style={{
+                    background: activeFilter === filter ? "#FF85BB" : "rgba(255,255,255,0.05)",
+                    color: activeFilter === filter ? "#021A54" : "#fff",
+                    transition: "all 0.3s ease",
+                    fontSize: "0.8rem",
+                    cursor: "pointer",
+                    whiteSpace: "nowrap"
+                  }}
+                  onMouseEnter={(e) => { if (activeFilter !== filter) e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+                  onMouseLeave={(e) => { if (activeFilter !== filter) e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                >
+                  {filter === 'all' ? 'All' : filter}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile/Tablet: Dropdown */}
+            <div className="d-lg-none position-relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="px-3 py-2 rounded-pill fw-semibold border-0 d-flex align-items-center gap-2"
                 style={{
-                  background: "rgba(2, 26, 84, 0.95)",
-                  backdropFilter: "blur(10px)",
-                  border: "1px solid rgba(255,133,187,0.3)",
-                  minWidth: "150px",
-                  zIndex: 20
+                  background: "rgba(255,255,255,0.05)",
+                  color: "#fff",
+                  transition: "all 0.3s ease",
+                  fontSize: "0.8rem",
+                  cursor: "pointer",
+                  whiteSpace: "nowrap"
                 }}
               >
-                <button
-                  onClick={() => {
-                    setActiveFilter('all');
-                    setIsDropdownOpen(false);
-                  }}
-                  className="w-100 text-start px-4 py-2 border-0"
+                {getFilterLabel()} <FaChevronDown style={{ fontSize: "0.65rem", transition: "transform 0.3s", transform: isDropdownOpen ? "rotate(180deg)" : "rotate(0)" }} />
+              </button>
+              
+              {isDropdownOpen && (
+                <div 
+                  className="position-absolute end-0 mt-2 py-2 rounded-3"
                   style={{
-                    background: activeFilter === 'all' ? "#FF85BB" : "transparent",
-                    color: activeFilter === 'all' ? "#021A54" : "#fff",
-                    transition: "all 0.2s",
-                    fontSize: "0.85rem",
-                    cursor: "pointer"
-                  }}
-                  onMouseEnter={(e) => {
-                    if (activeFilter !== 'all') {
-                      e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (activeFilter !== 'all') {
-                      e.currentTarget.style.background = "transparent";
-                    }
+                    background: "rgba(2, 26, 84, 0.98)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255,133,187,0.3)",
+                    minWidth: "150px",
+                    zIndex: 9999,
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+                    overflow: "hidden"
                   }}
                 >
-                  All Projects
-                </button>
-                <button
-                  onClick={() => {
-                    setActiveFilter('Frontend');
-                    setIsDropdownOpen(false);
-                  }}
-                  className="w-100 text-start px-4 py-2 border-0"
-                  style={{
-                    background: activeFilter === 'Frontend' ? "#FF85BB" : "transparent",
-                    color: activeFilter === 'Frontend' ? "#021A54" : "#fff",
-                    transition: "all 0.2s",
-                    fontSize: "0.85rem",
-                    cursor: "pointer"
-                  }}
-                  onMouseEnter={(e) => {
-                    if (activeFilter !== 'Frontend') {
-                      e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (activeFilter !== 'Frontend') {
-                      e.currentTarget.style.background = "transparent";
-                    }
-                  }}
-                >
-                  Frontend
-                </button>
-                <button
-                  onClick={() => {
-                    setActiveFilter('Full Stack');
-                    setIsDropdownOpen(false);
-                  }}
-                  className="w-100 text-start px-4 py-2 border-0"
-                  style={{
-                    background: activeFilter === 'Full Stack' ? "#FF85BB" : "transparent",
-                    color: activeFilter === 'Full Stack' ? "#021A54" : "#fff",
-                    transition: "all 0.2s",
-                    fontSize: "0.85rem",
-                    cursor: "pointer"
-                  }}
-                  onMouseEnter={(e) => {
-                    if (activeFilter !== 'Full Stack') {
-                      e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (activeFilter !== 'Full Stack') {
-                      e.currentTarget.style.background = "transparent";
-                    }
-                  }}
-                >
-                  Full Stack
-                </button>
-              </div>
-            )}
+                  <button
+                    onClick={() => handleFilterChange('all')}
+                    className="w-100 text-start px-4 py-2 border-0"
+                    style={{
+                      background: activeFilter === 'all' ? "#FF85BB" : "transparent",
+                      color: activeFilter === 'all' ? "#021A54" : "#fff",
+                      transition: "all 0.2s",
+                      fontSize: "0.85rem",
+                      cursor: "pointer"
+                    }}
+                    onMouseEnter={(e) => { if (activeFilter !== 'all') e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+                    onMouseLeave={(e) => { if (activeFilter !== 'all') e.currentTarget.style.background = "transparent"; }}
+                  >
+                    All Projects
+                  </button>
+                  <button
+                    onClick={() => handleFilterChange('Frontend')}
+                    className="w-100 text-start px-4 py-2 border-0"
+                    style={{
+                      background: activeFilter === 'Frontend' ? "#FF85BB" : "transparent",
+                      color: activeFilter === 'Frontend' ? "#021A54" : "#fff",
+                      transition: "all 0.2s",
+                      fontSize: "0.85rem",
+                      cursor: "pointer"
+                    }}
+                    onMouseEnter={(e) => { if (activeFilter !== 'Frontend') e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+                    onMouseLeave={(e) => { if (activeFilter !== 'Frontend') e.currentTarget.style.background = "transparent"; }}
+                  >
+                    Frontend
+                  </button>
+                  <button
+                    onClick={() => handleFilterChange('Full Stack')}
+                    className="w-100 text-start px-4 py-2 border-0"
+                    style={{
+                      background: activeFilter === 'Full Stack' ? "#FF85BB" : "transparent",
+                      color: activeFilter === 'Full Stack' ? "#021A54" : "#fff",
+                      transition: "all 0.2s",
+                      fontSize: "0.85rem",
+                      cursor: "pointer"
+                    }}
+                    onMouseEnter={(e) => { if (activeFilter !== 'Full Stack') e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
+                    onMouseLeave={(e) => { if (activeFilter !== 'Full Stack') e.currentTarget.style.background = "transparent"; }}
+                  >
+                    Full Stack
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Projects Slider with Arrows - Both Ends */}
-        <div className="position-relative">
+        {/* Projects Slider */}
+        <div className="position-relative" style={{ padding: '0 30px' }}>
+          
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
-            className="position-absolute d-flex align-items-center justify-content-center projects-arrow"
+            className="position-absolute d-flex align-items-center justify-content-center projects-arrow d-none d-sm-flex"
             style={{
-              left: "-20px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 10,
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              background: "rgba(2, 26, 84, 0.9)",
-              border: "1px solid rgba(255,133,187,0.5)",
-              color: "#fff",
-              cursor: "pointer",
-              transition: "all 0.3s"
+              left: "0", top: "50%", transform: "translateY(-50%)", zIndex: 10,
+              width: "36px", height: "36px", borderRadius: "50%",
+              background: "rgba(2, 26, 84, 0.9)", border: "1px solid rgba(255,133,187,0.5)",
+              color: "#fff", cursor: "pointer", transition: "all 0.3s"
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#FF85BB";
-              e.currentTarget.style.color = "#021A54";
-              e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgba(2, 26, 84, 0.9)";
-              e.currentTarget.style.color = "#fff";
-              e.currentTarget.style.transform = "translateY(-50%) scale(1)";
-            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = "#FF85BB"; e.currentTarget.style.color = "#021A54"; e.currentTarget.style.transform = "translateY(-50%) scale(1.1)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(2, 26, 84, 0.9)"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.transform = "translateY(-50%) scale(1)"; }}
           >
-            <FaArrowLeft />
+            <FaArrowLeft size={14} />
           </button>
 
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
-            className="position-absolute d-flex align-items-center justify-content-center projects-arrow"
+            className="position-absolute d-flex align-items-center justify-content-center projects-arrow d-none d-sm-flex"
             style={{
-              right: "-20px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 10,
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              background: "rgba(2, 26, 84, 0.9)",
-              border: "1px solid rgba(255,133,187,0.5)",
-              color: "#fff",
-              cursor: "pointer",
-              transition: "all 0.3s"
+              right: "0", top: "50%", transform: "translateY(-50%)", zIndex: 10,
+              width: "36px", height: "36px", borderRadius: "50%",
+              background: "rgba(2, 26, 84, 0.9)", border: "1px solid rgba(255,133,187,0.5)",
+              color: "#fff", cursor: "pointer", transition: "all 0.3s"
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#FF85BB";
-              e.currentTarget.style.color = "#021A54";
-              e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgba(2, 26, 84, 0.9)";
-              e.currentTarget.style.color = "#fff";
-              e.currentTarget.style.transform = "translateY(-50%) scale(1)";
-            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = "#FF85BB"; e.currentTarget.style.color = "#021A54"; e.currentTarget.style.transform = "translateY(-50%) scale(1.1)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(2, 26, 84, 0.9)"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.transform = "translateY(-50%) scale(1)"; }}
           >
-            <FaArrowRight />
+            <FaArrowRight size={14} />
           </button>
 
           {/* Projects Container */}
@@ -427,118 +304,62 @@ const Projects = () => {
             id="projects-container"
             className="d-flex"
             style={{
-              gap: "24px",
-              overflowX: "auto",
-              overflowY: "hidden",
-              scrollBehavior: "smooth",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              padding: "10px 5px"
+              gap: "20px", overflowX: "auto", overflowY: "hidden",
+              scrollBehavior: "smooth", scrollbarWidth: "none", msOverflowStyle: "none",
+              padding: "15px 5px"
             }}
             onScroll={handleScroll}
           >
             {filteredProjects.map((project) => (
-              <div 
-                key={project.id} 
-                className="flex-shrink-0"
-                style={{
-                  width: getCardWidth(),
-                  minWidth: cardsPerView === 1 ? "280px" : "auto"
-                }}
-              >
+              <div key={project.id} className="flex-shrink-0" style={{ width: getCardWidth(), minWidth: cardsPerView === 1 ? "260px" : "auto" }}>
                 <div 
                   className="card h-100 border-0 project-card"
                   style={{
-                    background: "rgba(255, 255, 255, 0.05)",
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                    transition: "all 0.3s ease",
-                    backdropFilter: "blur(10px)"
+                    background: "rgba(255, 255, 255, 0.05)", borderRadius: "20px",
+                    overflow: "hidden", transition: "all 0.3s ease", backdropFilter: "blur(10px)"
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-8px)";
-                    e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 133, 187, 0.3)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 15px 30px rgba(255, 133, 187, 0.25)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
                 >
-                  <div className="position-relative overflow-hidden" style={{ height: "200px" }}>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-100 h-100"
-                      style={{ objectFit: "cover", transition: "transform 0.3s ease" }}
-                      onMouseEnter={(e) => e.target.style.transform = "scale(1.1)"}
+                  <div className="position-relative overflow-hidden" style={{ height: "180px" }}>
+                    <img src={project.image} alt={project.title} className="w-100 h-100" style={{ objectFit: "cover", transition: "transform 0.3s ease" }}
+                      onMouseEnter={(e) => e.target.style.transform = "scale(1.08)"}
                       onMouseLeave={(e) => e.target.style.transform = "scale(1)"}
                     />
-                    <span 
-                      className="position-absolute top-0 start-0 m-3 px-1 py-1 rounded-pill project-badge"
-                      style={{
-                        background: "linear-gradient(135deg, #FF85BB, #e06ea0)",
-                        color: "#021A54",
-                        fontSize: "0.7rem",
-                        fontWeight: "600"
-                      }}
+                    <span className="position-absolute top-0 start-0 m-2 px-2 py-1 rounded-pill project-badge"
+                      style={{ background: "linear-gradient(135deg, #FF85BB, #e06ea0)", color: "#021A54", fontSize: "0.65rem", fontWeight: "600" }}
                     >
                       {project.category}
                     </span>
                   </div>
 
-                  <div className="card-body p-3 p-md-4">
-                    <h5 className="card-title text-white fw-bold mb-2 project-title" style={{ fontSize: "1rem" }}>
-                      {project.title}
-                    </h5>
-                    <p className="card-text text-secondary mb-3 project-desc" style={{ fontSize: "0.8rem", lineHeight: "1.5" }}>
-                      {project.description.substring(0, 80)}...
+                  <div className="card-body p-3">
+                    <h5 className="card-title text-white fw-bold mb-2 project-title" style={{ fontSize: "0.95rem", lineHeight: "1.3" }}>{project.title}</h5>
+                    <p className="card-text text-secondary mb-3 project-desc" style={{ fontSize: "0.75rem", lineHeight: "1.4" }}>
+                      {project.description.substring(0, 90)}...
                     </p>
                     
-                    <div className="d-flex flex-wrap gap-1 justify-content-start mb-3">
-                      {project.tech.slice(0, 4).map((tech, idx) => (
+                    <div className="d-flex flex-wrap gap-1 mb-3">
+                      {project.tech.slice(0, 3).map((tech, idx) => (
                         <span key={idx} className="px-2 py-1 rounded-pill" style={{
-                          background: "rgba(255, 133, 187, 0.15)",
-                          color: "#FF85BB",
-                          fontSize: "0.65rem",
-                          fontWeight: "500",
-                          border: "1px solid rgba(255, 133, 187, 0.3)"
-                        }}>
-                          {tech}
-                        </span>
+                          background: "rgba(255, 133, 187, 0.15)", color: "#FF85BB",
+                          fontSize: "0.6rem", fontWeight: "500", border: "1px solid rgba(255, 133, 187, 0.3)"
+                        }}>{tech}</span>
                       ))}
                     </div>
                     
                     <div className="d-flex gap-2">
                       <a href={project.codeLink} target="_blank" rel="noopener noreferrer"
                         className="btn rounded-pill px-2 py-1 fw-semibold flex-fill project-btn-code"
-                        style={{
-                          background: "rgba(255, 255, 255, 0.1)",
-                          color: "#fff",
-                          border: "1px solid rgba(255, 255, 255, 0.2)",
-                          transition: "all 0.3s",
-                          fontSize: "0.7rem",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          gap: "4px"
-                        }}>
-                        <FaCode size={10} /> Code
+                        style={{ background: "rgba(255, 255, 255, 0.1)", color: "#fff", border: "1px solid rgba(255, 255, 255, 0.2)", transition: "all 0.3s", fontSize: "0.65rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "4px" }}
+                      >
+                        <FaCode size={9} /> Code
                       </a>
-
                       <a href={project.liveLink} target="_blank" rel="noopener noreferrer"
                         className="btn rounded-pill px-2 py-1 fw-semibold flex-fill project-btn-view"
-                        style={{
-                          background: "#FF85BB",
-                          color: "#021A54",
-                          border: "none",
-                          transition: "all 0.3s",
-                          fontSize: "0.7rem",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          gap: "4px"
-                        }}>
-                        <FaExternalLinkAlt size={10} /> View
+                        style={{ background: "#FF85BB", color: "#021A54", border: "none", transition: "all 0.3s", fontSize: "0.65rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "4px" }}
+                      >
+                        <FaExternalLinkAlt size={9} /> View
                       </a>
                     </div>
                   </div>
@@ -548,15 +369,13 @@ const Projects = () => {
           </div>
         </div>
 
+        {/* CSS Styles */}
         <style>{`
           #projects-container::-webkit-scrollbar { display: none; }
           .projects-arrow { transition: all 0.3s ease; }
           
-          @media (max-width: 768px) {
-            .projects-arrow { width: 35px !important; height: 35px !important; left: -10px !important; right: -10px !important; }
-          }
-          @media (max-width: 576px) {
-            .projects-arrow { width: 30px !important; height: 30px !important; left: -8px !important; right: -8px !important; }
+          @media (max-width: 575px) {
+            .projects-arrow { display: flex !important; width: 32px !important; height: 32px !important; }
           }
         `}</style>
 

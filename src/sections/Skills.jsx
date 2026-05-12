@@ -90,7 +90,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-5 position-relative overflow-hidden skills-section" style={{ background: '#021A54', minHeight: '100vh' }}>
+    <section id="skills" className="py-5 position-relative overflow-hidden skills-section" style={{ background: '#021A54', }}>
       <div className="position-absolute w-100 h-100" style={{ top: 0, left: 0, overflow: 'hidden', pointerEvents: 'none' }}>
         <div className="position-absolute rounded-circle" style={{ width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,133,187,0.08) 0%, transparent 70%)', top: '-100px', right: '-100px', animation: 'float 25s infinite ease-in-out' }} />
         <div className="position-absolute rounded-circle" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(0,255,163,0.08) 0%, transparent 70%)', bottom: '-50px', left: '-100px', animation: 'float 18s infinite ease-in-out reverse' }} />
@@ -100,7 +100,7 @@ const Skills = () => {
         {/* Header */}
         <div className="mb-5">
           <span className="small d-inline-block px-3 py-1 rounded-pill mb-3" style={{ color: '#FF85BB', letterSpacing: '2px' }}>✦ MY EXPERTISE ✦</span>
-          <h1 className="fw-bold mb-3 fs-1 skills-title" style={{ color: '#ffffff' }}>
+         <br /> <h1 className="fw-bold mb-3 fs-1 skills-title heading-underline" style={{ color: '#ffffff' }}>
             Technical <span style={{ color: '#FF85BB' }}>Skills</span>
           </h1>
           <p className="skills-subtitle" style={{ maxWidth: '550px', color: '#94a3b8', fontSize: '1rem' }}>
@@ -145,7 +145,7 @@ const Skills = () => {
         </div>
 
         {/* Main Card */}
-        <Row className="mt-3">
+        <Row className="mt-3 mb-4">
           <Col lg={12}>
             <div className="skills-card p-4 p-lg-5 rounded-4" style={{
               background: `linear-gradient(135deg, ${activeCat.accent}10, rgba(255,255,255,0.02))`,

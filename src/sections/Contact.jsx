@@ -52,7 +52,7 @@ const Contact = () => {
       className="py-3 position-relative contact-section"
       style={{ 
         backgroundColor: "rgba(2, 26, 84, 0.9)",
-        minHeight: "100vh"
+       
       }}
     >
       <div className="container py-5">

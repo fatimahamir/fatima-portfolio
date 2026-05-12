@@ -96,7 +96,7 @@ const AboutMe = () => {
             </div>
 
             {/* Download CV Button */}
-            <div className="text-start">
+            {/* <div className="text-start">
               <a
                 href="/cv.pdf"
                 download
@@ -124,7 +124,19 @@ const AboutMe = () => {
               >
                 View CV
               </a>
-            </div>
+            </div> */}
+            <a
+  href="#contact"
+  className="btn rounded-pill px-4 py-2 fw-semibold"
+  style={{
+    backgroundColor: "#FF85BB",
+    color: "#021A54",
+    letterSpacing: "1px",
+    border: "2px solid #FF85BB"
+  }}
+>
+  Let's Work Together
+</a>
           </div>
 
           {/* Right Side - Services Card */}
