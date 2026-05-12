@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap'); 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+   
+}
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================
+   CSS VARIABLES (Dark/Light Mode Support)
+   ============================================ */
+:root {
+  /* Default: Dark Mode Colors */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --border-card: rgba(255, 255, 255, 0.05);
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+  --text-primary: #021A54;      /* ✅ Dark Blue text */
+  --text-secondary: #555555;     /* ✅ Dark Gray secondary text */
+  --bg-card: rgba(2, 26, 84, 0.05);
+  --border-card: rgba(2, 26, 84, 0.1);
+  --card-shadow: 0 10px 40px rgba(2, 26, 84, 0.1);
+}
+
+/* ============================================
+   MOBILE (Default - Sab se pehle load hoga)
+   Screen: ≤ 767px
+   Image: bg-mobile.png (414 × 500px)
+   ============================================ */
+.full-screen-bg {
+  width: 100%;
+  min-height: 94vh;          
+  background-image: url('./assets/mob.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  
+}
+
+/* ============================================
+   TABLET
+   Screen: 768px - 1023px
+   Image: bg-tablet.png (768 × 600px)
+   ============================================ */
+@media (min-width: 768px) {
+  .full-screen-bg {
+    min-height: 94vh;          /* Tablet par 80% height */
+    background-image: url('./assets/tab1.png');
+    background-position: center;
+  }
+}
+
+/* ============================================
+   DESKTOP / LAPTOP
+   Screen: 1024px - 1439px
+   Image: bg-desktop.png (1920 × 850px)
+   ============================================ */
+@media (min-width: 1024px) {
+  .full-screen-bg {
+    min-height: 94vh;         /* Desktop par full height */
+    background-image: url('./assets/full.png');
+    background-attachment: scroll; 
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (Optional)
+   Screen: ≥ 1440px
+   ============================================ */
+@media (min-width: 1440px) {
+  .full-screen-bg {
+    min-height: 94vh;
+    background-size: cover;
+     background-attachment: scroll;
+  }
+}
+
+/* Hero section ke liye specific override */
+#home.min-vh-100 {
+  min-height: 98vh !important;
+}
+
+@media (min-width: 768px) {
+  #home.min-vh-100 {
+    min-height: 94vh !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #home.min-vh-100 {
+    min-height: 94vh !important; /* ✅ 90vh on desktop */
+  }
+}
+
+.heading-underline {
+  position: relative;
+  display: inline-block;
+  
+}
+.heading-underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  width: 50%;  /* Pehle choti */
+  height: 3px;
+  background-color: #FF85BB;
+  transition: width 0.3s ease;  /* Smooth animation */
+}
+
+.heading-underline:hover::after {
+  width: 100%;  /* Hover par full width */
+}
+
+/* ============================================
+   ABOUT ME - LIGHT MODE OVERRIDES
+   ============================================ */
+body.light-mode .about-section {
+  background-color: #ffffff !important;
+}
+
+body.light-mode .about-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-card) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+body.light-mode .about-title,
+body.light-mode .about-name,
+body.light-mode .about-card-title,
+body.light-mode .about-value {
+  color: var(--text-primary) !important;
+}
+
+body.light-mode .about-text,
+body.light-mode .about-label,
+body.light-mode .about-footer-text {
+  color: var(--text-secondary) !important;
+}
+
+body.light-mode .about-cv-btn {
+  background-color: #FF85BB !important;
+  color: #021A54 !important;
+  border-color: #FF85BB !important;
+}
+
+body.light-mode .about-cv-btn:hover {
+  background-color: transparent !important;
+  color: #FF85BB !important;
+}
+/* ============================================
+   PROJECTS SECTION - LIGHT MODE OVERRIDES
+   ============================================ */
+
+/* Background White */
+body.light-mode .projects-section {
+  background-color: #ffffff !important;
+}
+
+/* Title & Subtitle */
+body.light-mode .projects-title {
+  color: #021A54 !important;
+}
+
+body.light-mode .projects-subtitle {
+  color: #555 !important;
+}
+
+/* Navigation Arrows */
+body.light-mode .projects-arrow {
+  background: #021A54 !important;
+  color: #fff !important;
+  border: 1px solid rgba(2, 26, 84, 0.2) !important;
+}
+
+body.light-mode .projects-arrow:hover {
+  background: #FF85BB !important;
+  color: #fff !important;
+}
+
+/* Project Cards */
+body.light-mode .project-card {
+  background: rgba(2, 26, 84, 0.05) !important;
+  border: 1px solid rgba(2, 26, 84, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(2, 26, 84, 0.08) !important;
+}
+
+body.light-mode .project-card:hover {
+  box-shadow: 0 20px 40px rgba(2, 26, 84, 0.15), 0 0 0 1px rgba(255, 133, 187, 0.3) !important;
+}
+
+/* Project Title & Description */
+body.light-mode .project-title {
+  color: #021A54 !important;
+}
+
+body.light-mode .project-desc {
+  color: #555 !important;
+}
+
+/* Category Badge - Pink rahega */
+body.light-mode .project-badge {
+  background: rgba(255, 133, 187, 0.9) !important;
+  color: #fff !important;
+}
+
+/* Code Button */
+body.light-mode .project-btn-code {
+  background: rgba(2, 26, 84, 0.08) !important;
+  color: #021A54 !important;
+  border-color: rgba(2, 26, 84, 0.2) !important;
+}
+
+body.light-mode .project-btn-code:hover {
+  background: rgba(2, 26, 84, 0.15) !important;
+  border-color: #FF85BB !important;
+}
+
+/* View Button - Pink rahega */
+body.light-mode .project-btn-view {
+  background: #FF85BB !important;
+  color: #021A54 !important;
+}
+
+body.light-mode .project-btn-view:hover {
+  background: #e06ea0 !important;
+}
+
+/* ============================================
+   CONTACT SECTION - NIGHT MODE PLACEHOLDER
+   ============================================ */
+
+/* Dark mode mein placeholder white */
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1;
+}
+
+.contact-input:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Light mode mein placeholder gray */
+body.light-mode .contact-input::placeholder {
+  color: #888 !important;
+}
+
+/* ============================================
+   CONTACT SECTION - LIGHT MODE OVERRIDES
+   ============================================ */
+
+/* Background White */
+body.light-mode .contact-section {
+  background-color: #ffffff !important;
+}
+
+/* Title & Subtitle */
+body.light-mode .contact-title {
+  color: #021A54 !important;
+}
+
+body.light-mode .contact-subtitle {
+  color: #555 !important;
+}
+
+/* Contact Info Labels & Values */
+body.light-mode .contact-info-label {
+  color: #666 !important;
+}
+
+body.light-mode .contact-info-value {
+  color: #021A54 !important;
+}
+
+/* Icon Boxes */
+body.light-mode .contact-icon-box {
+  background: rgba(255, 133, 187, 0.1) !important;
+  border-color: rgba(255, 133, 187, 0.3) !important;
+  color: #FF85BB !important;
+}
+
+body.light-mode .contact-icon-box:hover {
+  background: #FF85BB !important;
+  color: #fff !important;
+}
+
+/* Form Inputs */
+body.light-mode .contact-input {
+  background: rgba(2, 26, 84, 0.05) !important;
+  border-color: rgba(2, 26, 84, 0.15) !important;
+  color: #021A54 !important;
+}
+
+body.light-mode .contact-input:focus {
+  background: rgba(255, 133, 187, 0.08) !important;
+  border-color: #FF85BB !important;
+}
+
+/* Submit Button */
+body.light-mode .contact-submit-btn {
+  background: #FF85BB !important;
+  color: #021A54 !important;
+}
+
+body.light-mode .contact-submit-btn:hover {
+  background: #e06ea0 !important;
+}
+
+/* Social Icons Label */
+body.light-mode .contact-social-label {
+  color: #666 !important;
+}
+
+/* Social Icons */
+body.light-mode .contact-social-icon {
+  background: rgba(2, 26, 84, 0.08) !important;
+  border-color: rgba(2, 26, 84, 0.15) !important;
+  color: #021A54 !important;
+}
+
+body.light-mode .contact-social-icon:hover {
+  background: #FF85BB !important;
+  border-color: #FF85BB !important;
+  color: #fff !important;
+}

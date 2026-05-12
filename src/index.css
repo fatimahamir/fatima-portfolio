@@ -1,0 +1,27 @@
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Basic body setup */
+body {
+  font-family: Arial, sans-serif;
+  background: #021A54;  /* fallback dark */
+  color: white;
+}
+
+/* Links default remove */
+a {
+  text-decoration: none;
+  color: inherit;
+}

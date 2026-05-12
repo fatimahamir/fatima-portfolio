@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Navbar Base */
+.navbar {
+  background-color: rgba(2, 26, 84, 0.4);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 0;
+  backdrop-filter: blur(5px);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo - Left */
+.navbar-logo a {
+  font-family: "'poppins', sans-serif";
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FF85BB;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-logo a:hover {
+  transform: scale(1.05);
+}
+
+/* Nav Links - Center */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  align-items: center;
+  gap: 0.5rem;
+  
+  
+}
+
+.nav-links li a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #F5F5F5;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #FF85BB;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #FF85BB;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 50%;
+}
+
+/* Hire Me Button - Desktop (inside nav-links but pushed right) */
+.nav-hire-item {
+  margin-left: 1rem;
+}
+
+.hire-me-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #FF85BB;
+  color: #021A54 !important;
+  padding: 0.4rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 2px solid #FF85BB;
+  border-radius: 50px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.hire-me-btn:hover {
+
+  color: #FF85BB;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 133, 187, 0.4);
+}
+
+/* Right Group - Icons + Toggle */
+.navbar-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+/* Social Icons - Desktop */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-icons a {
+  color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.social-icons a:hover {
+  color: #FF85BB;
+  transform: translateY(-2px);
+}
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #F5F5F5;
+  cursor: pointer;
+  padding: 0.3rem;
+  z-index: 1001;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET & MOBILE
+   ============================================ */
+
+@media (max-width: 992px) {
+  .navbar{
+    background-color: rgba(2, 26, 84, 0.4);
+  }
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.5rem;
+  }
+
+  /* Mobile Menu - Dropdown */
+  .nav-links {
+    position: fixed !important; /* ✅ Absolute ki jagah Fixed */
+    top: 60px; /* Navbar height ke baad */
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    background-color: rgba(2, 26, 84, 0.8); /* Thora opaque */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0;
+    overflow-y: auto; /* Vertical scroll allow */
+    overflow-x: hidden; /* Horizontal hide */
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 9999 !important; /* ✅ High z-index */
+  }
+
+  .nav-links.active {
+    max-height: 550px;
+    padding: 1.5rem 1rem;
+  }
+
+  .nav-links li a {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  /* Hire Me in Mobile Menu - Show at bottom */
+  .nav-hire-item {
+    display: none;
+  }
+
+  .nav-links.active .nav-hire-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0.5rem 0 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 206, 227, 0.2);
+  }
+
+  .nav-links.active .nav-hire-item .hire-me-btn {
+    width: 90%;
+    max-width: 250px;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Hide Social Icons on Mobile */
+  .social-icons {
+    display: none;
+  }
+
+  /* Show Mobile Toggle on Right */
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 0;
+  }
+
+  .navbar-logo a {
+    font-size: 1.3rem;
+  }
+
+  .nav-links.active {
+    top: 52px;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .nav-links.active .nav-hire-item .hire-me-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Large Screens - Fixed Width */
+@media (min-width: 1200px) {
+  .navbar-container {
+    max-width: 1300px;
+    padding: 0 1rem;
+  }
+}
+
