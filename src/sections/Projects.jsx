@@ -5,6 +5,7 @@ import school from '../assets/school.png';
 import airport from '../assets/airport.png';
 import counter from '../assets/counter.png';
 import stock from '../assets/stock2.png';
+import hiree from '../assets/hiree.png';
 
 const Projects = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -17,6 +18,27 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
+      title: 'Hiree - Service Marketplace',
+      description: 'Full-stack MERN platform connecting freelancers with clients. Features include service booking, job applications, and role-based dashboards.',
+      image: hiree,
+      category: 'Full Stack',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express', 'Socket.io'],
+      codeLink: 'https://github.com/fatimahamir/Hiree-Project', 
+      liveLink: 'https://hiree-project.vercel.app/' 
+    },
+     {
+      id: 2,
+      title: 'Stock Master-Inventory Management System',
+      description: 'Smart inventory manager with live stock updates, automated reorder alerts, and clean analytics for modern operations.',
+      image: stock,
+      category: 'Full Stack',
+      tech: ['NodeJS', 'MongoDB Atlas', 'Express Js'],
+      codeLink: 'https://github.com/fatimahamir/inventory-management/tree/main',
+      liveLink: 'https://inventory-management-seven-virid.vercel.app/'
+    },
+    
+    {
+      id: 3,
       title: 'Hospital Management System',
       description: 'Designed and Developed the interface for Hospital website using Html CSS Js and Bootstrap',
       image: hospital,
@@ -26,7 +48,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/hospitalwebsitedr.care-/'
     },
     {
-      id: 2,
+      id: 4,
       title: 'School Management System', 
       description: 'Designed and Developed the interface for School website using REACT and Bootstrap. Implement Application Form',
       image: school,
@@ -36,7 +58,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/loginschoolapp/'
     },
     {
-      id: 3,
+      id: 5,
       title: 'Airport Management System',
       description: 'Designed and Developed the interface for Airport website using REACT and Bootstrap. Implement CRUD operation',
       image: airport,
@@ -46,7 +68,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/Airport-Mangment-system/'
     },
     {
-      id: 4,
+      id: 6,
       title: 'Custom React Counter',
       description: 'A smooth animated counter built with React that dynamically updates numbers with engaging transitions for a modern UI experience.',
       image: counter,
@@ -54,17 +76,9 @@ const Projects = () => {
       tech: ['React Js', 'Vite'],
       codeLink: 'https://github.com/fatimahamir/CounterProject/tree/main',
       liveLink: 'https://counter-project-react-kappa.vercel.app/'
-    },
-    {
-      id: 5,
-      title: 'Inventory Management System',
-      description: 'Smart inventory manager with live stock updates, automated reorder alerts, and clean analytics for modern operations.',
-      image: stock,
-      category: 'Full Stack',
-      tech: ['NodeJS', 'MongoDB Atlas', 'Express Js'],
-      codeLink: 'https://github.com/fatimahamir/inventory-management/tree/main',
-      liveLink: 'https://inventory-management-seven-virid.vercel.app/'
     }
+    
+   
   ];
 
   const filteredProjects = activeFilter === 'all' 
