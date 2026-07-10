@@ -32,8 +32,8 @@ body, html {
 
 /* Light Mode Overrides */
 body.light-mode {
-  --text-primary: #021A54;      /* ✅ Dark Blue text */
-  --text-secondary: #555555;     /* ✅ Dark Gray secondary text */
+  --text-primary: #021A54;      
+  --text-secondary: #555555;   
   --bg-card: rgba(2, 26, 84, 0.05);
   --border-card: rgba(2, 26, 84, 0.1);
   --card-shadow: 0 10px 40px rgba(2, 26, 84, 0.1);
@@ -75,7 +75,7 @@ body.light-mode {
    ============================================ */
 @media (min-width: 1024px) {
   .full-screen-bg {
-    min-height: 94vh;         /* Desktop par full height */
+    min-height: 94vh;       
     background-image: url('./assets/full.png');
     background-attachment: scroll; 
   }
@@ -106,7 +106,7 @@ body.light-mode {
 
 @media (min-width: 1024px) {
   #home.min-vh-100 {
-    min-height: 94vh !important; /* ✅ 90vh on desktop */
+    min-height: 94vh !important;
   }
 }
 
@@ -121,10 +121,10 @@ body.light-mode {
   left: 50%;
   transform: translateX(-50%);
   bottom: -6px;
-  width: 50%;  /* Pehle choti */
+  width: 50%;  
   height: 3px;
   background-color: #FF85BB;
-  transition: width 0.3s ease;  /* Smooth animation */
+  transition: width 0.3s ease; 
 }
 
 .heading-underline:hover::after {
