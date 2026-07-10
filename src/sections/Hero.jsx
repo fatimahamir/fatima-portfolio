@@ -181,7 +181,7 @@ const Hero = () => {
               </a>
 
               <a
-                 href="/resume.pdf"
+                 href="/Fatima_Amir_Resume.pdf"
                 download="Fatima_Amir_Resume.pdf"
                 className="btn rounded-pill px-4 py-2 fw-semibold"
                 style={{

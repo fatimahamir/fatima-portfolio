@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaCode, FaServer, FaTools, FaLanguage, FaStar, FaRocket, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-// ✅ Apni images import karein
+
 import htmlImg from '../assets/html5.jpg';
 import cssImg from '../assets/css.png';
 import jsImg from '../assets/js.png';
