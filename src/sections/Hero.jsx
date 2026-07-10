@@ -53,7 +53,7 @@ const Hero = () => {
     <section
       id="home"
       className="d-flex align-items-center min-vh-100"
-      style={{ backgroundColor: "rgba(2, 26, 84, 0.6)" }}
+      style={{ backgroundColor: "rgba(2, 26, 84, 0.7)" }}
     >
       <div className="container py-5">
         <div className="row align-items-center g-4 justify-content-center">
