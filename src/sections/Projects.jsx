@@ -3,6 +3,7 @@ import { FaArrowLeft, FaArrowRight, FaCode, FaExternalLinkAlt, FaChevronDown } f
 import hospital from '../assets/hospital1.png';
 import school from '../assets/school.png';
 import airport from '../assets/airport.png';
+import taskify from '../assets/taskify.png';
 import counter from '../assets/counter.png';
 import stock from '../assets/stock2.png';
 import hiree from '../assets/hiree.png';
@@ -82,6 +83,16 @@ const Projects = () => {
     },
     {
       id: 7,
+      title: ' Taskify — Task & Team Management App',
+      description: 'A React-based task management application for teams — create teams, assign tasks, track progress, and manage everything from a clean dashboard with dark/light mode.',
+      image: taskify,
+      category: 'Frontend',
+      tech: ['React Js', 'Vite', 'Bootstrap'],
+      codeLink: 'https://github.com/fatimahamir/Taskify',
+      liveLink: 'https://fatimahamir.github.io/Taskify//#/splash'
+    },
+    {
+      id: 8,
       title: 'Airport Management System',
       description: 'Designed and Developed the interface for Airport website using REACT and Bootstrap. Implement CRUD operation',
       image: airport,
@@ -91,7 +102,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/Airport-Mangment-system/'
     },
     {
-      id: 8,
+      id: 9,
       title: 'Custom React Counter',
       description: 'A smooth animated counter built with React that dynamically updates numbers with engaging transitions for a modern UI experience.',
       image: counter,
