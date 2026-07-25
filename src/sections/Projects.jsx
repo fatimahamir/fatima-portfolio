@@ -9,6 +9,7 @@ import stock from '../assets/stock2.png';
 import hiree from '../assets/hiree.png';
 import smartmarket from '../assets/smartmarket.png';
 import vendorpro from '../assets/vendorpro.png';
+import elyra from '../assets/elyrahome.jpeg';
 
 const Projects = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -60,9 +61,19 @@ const Projects = () => {
       codeLink: 'https://github.com/fatimahamir/inventory-management/tree/main',
       liveLink: 'https://inventory-management-seven-virid.vercel.app/'
     },
-    
     {
       id: 5,
+      title: 'ELYRA — Luxury Watch E-Commerce Website',
+      description: 'Premium luxury watch e-commerce frontend — React, Tailwind, Framer Motion — with product galleries, cart, checkout, and smooth animations.',
+      image: elyra,
+      category: 'Frontend',
+      tech: ['React Js', 'Vite', 'Tailwind'],
+      codeLink: 'https://github.com/fatimahamir/Elyra-luxury-watches',
+      liveLink: 'https://elyra-luxury-watches.vercel.app/'
+    },
+    
+    {
+      id: 6,
       title: 'Hospital Management System',
       description: 'Designed and Developed the interface for Hospital website using Html CSS Js and Bootstrap',
       image: hospital,
@@ -72,7 +83,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/hospitalwebsitedr.care-/'
     },
     {
-      id: 6,
+      id: 7,
       title: 'School Management System', 
       description: 'Designed and Developed the interface for School website using REACT and Bootstrap. Implement Application Form',
       image: school,
@@ -82,7 +93,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/loginschoolapp/'
     },
     {
-      id: 7,
+      id: 8,
       title: ' Taskify — Task & Team Management App',
       description: 'A React-based task management application for teams — create teams, assign tasks, track progress, and manage everything from a clean dashboard with dark/light mode.',
       image: taskify,
@@ -92,7 +103,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/Taskify//#/splash'
     },
     {
-      id: 8,
+      id: 9,
       title: 'Airport Management System',
       description: 'Designed and Developed the interface for Airport website using REACT and Bootstrap. Implement CRUD operation',
       image: airport,
@@ -102,7 +113,7 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/Airport-Mangment-system/'
     },
     {
-      id: 9,
+      id: 10,
       title: 'Custom React Counter',
       description: 'A smooth animated counter built with React that dynamically updates numbers with engaging transitions for a modern UI experience.',
       image: counter,
