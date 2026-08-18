@@ -11,6 +11,10 @@ import smartmarket from '../assets/smartmarket.png';
 import vendorpro from '../assets/vendorpro.png';
 import elyra from '../assets/elyrahome.jpeg';
 
+import shopora from '../assets/shopora.png';
+import gymapp from '../assets/gym1.png';
+import weatherapp from '../assets/weather.jpeg';
+
 const Projects = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(4);
@@ -21,15 +25,15 @@ const Projects = () => {
 
   const projectsData = [
     {
-  id: 1,
-  title: 'Smart Marketplace',
-  description: 'A full-stack MERN marketplace where users can buy products, book services, chat in real time, manage bookings, and access secure role-based dashboards.',
-  image: smartmarket,
-  category: 'Full Stack',
-  tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
-  codeLink: 'https://github.com/fatimahamir/smart-marketplace',
-  liveLink: 'https://smart-marketplace-navy.vercel.app'
-},
+      id: 1,
+      title: 'Smart Marketplace',
+      description: 'A full-stack MERN marketplace where users can buy products, book services, chat in real time, manage bookings, and access secure role-based dashboards.',
+      image: smartmarket,
+      category: 'Full Stack',
+      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
+      codeLink: 'https://github.com/fatimahamir/smart-marketplace',
+      liveLink: 'https://smart-marketplace-navy.vercel.app'
+    },
     {
       id: 2,
       title: 'Hiree - Service Marketplace',
@@ -40,18 +44,17 @@ const Projects = () => {
       codeLink: 'https://github.com/fatimahamir/Hiree-Project', 
       liveLink: 'https://hiree-project.vercel.app/' 
     },
-    
-{
-  id: 3,
-  title: 'VendorPro',
-  description: 'A modern MERN vendor management platform that helps businesses manage vendors and quotation requests efficiently. Users can add vendors, create and track quotations, compare vendor proposals.',
-  image: vendorpro,
-  category: 'Full Stack',
-  tech: ['React', 'Node.js', 'Express', 'MongoDB'],
-  codeLink: 'https://github.com/fatimahamir/VendorPro',
-  liveLink: 'https://vendorpro.vercel.app/'
-},
-     {
+    {
+      id: 3,
+      title: 'VendorPro',
+      description: 'A modern MERN vendor management platform that helps businesses manage vendors and quotation requests efficiently. Users can add vendors, create and track quotations, compare vendor proposals.',
+      image: vendorpro,
+      category: 'Full Stack',
+      tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+      codeLink: 'https://github.com/fatimahamir/VendorPro',
+      liveLink: 'https://vendorpro.vercel.app/'
+    },
+    {
       id: 4,
       title: 'Stock Master-Inventory Management System',
       description: 'Smart inventory manager with live stock updates, automated reorder alerts, and clean analytics for modern operations.',
@@ -61,7 +64,18 @@ const Projects = () => {
       codeLink: 'https://github.com/fatimahamir/inventory-management/tree/main',
       liveLink: 'https://inventory-management-seven-virid.vercel.app/'
     },
+    
     {
+      id: 11,
+      title: 'Shopora — E-Commerce App with API integration',
+      description: 'Modern e-commerce platform with Redux Toolkit state management, protected checkout, persistent cart/wishlist, filters, product details & toast notifications.',
+      image: shopora,
+      category: 'Frontend',
+      tech: ['React', 'Redux Toolkit', 'Tailwind', 'Vite'],
+      codeLink: 'https://github.com/fatimahamir/Ecommerce-website',
+      liveLink: 'https://ecommerce-website-orcin-chi.vercel.app/'
+    },
+        {
       id: 5,
       title: 'ELYRA — Luxury Watch E-Commerce Website',
       description: 'Premium luxury watch e-commerce frontend — React, Tailwind, Framer Motion — with product galleries, cart, checkout, and smooth animations.',
@@ -71,18 +85,7 @@ const Projects = () => {
       codeLink: 'https://github.com/fatimahamir/Elyra-luxury-watches',
       liveLink: 'https://elyra-luxury-watches.vercel.app/'
     },
-    
-    {
-      id: 6,
-      title: 'Hospital Management System',
-      description: 'Designed and Developed the interface for Hospital website using Html CSS Js and Bootstrap',
-      image: hospital,
-      category: 'Frontend',
-      tech: ['HTML5', 'CSS3', 'JS', 'Bootstrap'],
-      codeLink: 'https://github.com/fatimahamir/hospitalwebsitedr.care-',
-      liveLink: 'https://fatimahamir.github.io/hospitalwebsitedr.care-/'
-    },
-    {
+      {
       id: 7,
       title: 'School Management System', 
       description: 'Designed and Developed the interface for School website using REACT and Bootstrap. Implement Application Form',
@@ -93,8 +96,41 @@ const Projects = () => {
       liveLink: 'https://fatimahamir.github.io/loginschoolapp/'
     },
     {
+      id: 12,
+      title: 'FitHub — A Gym Landing Web Page',
+      description: 'Fully responsive gym landing page showcasing training programs, certified trainers, membership plans with modern energetic UI design.',
+      image: gymapp,
+      category: 'Frontend',
+      tech: ['React', 'Vite', 'Tailwind'],
+      codeLink: 'https://github.com/fatimahamir/gym-website',
+      liveLink: 'https://gym-website-three-rose.vercel.app/ '
+    },
+    {
+      id: 13,
+      title: 'Weather App with API Integration',
+      description: 'Real-time weather application using OpenWeatherMap API — search cities, view current conditions, forecasts with clean modern interface.',
+      image: weatherapp,
+      category: 'Frontend',
+      tech: ['React', 'Vite', 'API Integration'],
+      codeLink: 'https://github.com/fatimahamir/weather-app ',
+      liveLink: 'https://weather-app-wine-iota-75.vercel.app/'
+    },
+
+
+    {
+      id: 6,
+      title: 'Dr care+ Hospital landing Web Page ',
+      description: 'Designed and Developed the interface for Hospital website using Html CSS Js and Bootstrap',
+      image: hospital,
+      category: 'Frontend',
+      tech: ['HTML5', 'CSS3', 'JS', 'Bootstrap'],
+      codeLink: 'https://github.com/fatimahamir/hospitalwebsitedr.care-',
+      liveLink: 'https://fatimahamir.github.io/hospitalwebsitedr.care-/'
+    },
+  
+    {
       id: 8,
-      title: ' Taskify — Task & Team Management App',
+      title: 'Taskify — Task & Team Management App',
       description: 'A React-based task management application for teams — create teams, assign tasks, track progress, and manage everything from a clean dashboard with dark/light mode.',
       image: taskify,
       category: 'Frontend',
@@ -111,19 +147,7 @@ const Projects = () => {
       tech: ['React.js', 'Bootstrap', 'CRUD'],
       codeLink: 'https://github.com/fatimahamir/Airport-Mangment-system',
       liveLink: 'https://fatimahamir.github.io/Airport-Mangment-system/'
-    },
-    {
-      id: 10,
-      title: 'Custom React Counter',
-      description: 'A smooth animated counter built with React that dynamically updates numbers with engaging transitions for a modern UI experience.',
-      image: counter,
-      category: 'Frontend',
-      tech: ['React Js', 'Vite'],
-      codeLink: 'https://github.com/fatimahamir/CounterProject/tree/main',
-      liveLink: 'https://counter-project-react-kappa.vercel.app/'
     }
-    
-   
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -142,7 +166,6 @@ const Projects = () => {
     return () => window.removeEventListener('resize', updateCardsPerView);
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -196,10 +219,8 @@ const Projects = () => {
     >
       <div className="container py-4 position-relative">
         
-        {/* Header: Title Left + Filter Right */}
         <div className="d-flex flex-wrap justify-content-between align-items-center mb-4" style={{ gap: '1rem' }}>
           
-          {/* Title - Left Side */}
           <div>
             <span className="small d-block" style={{ color: '#FF85BB', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: '600',lineHeight:'2.4rem' }}>
   ✦ PORTFOLIO ✦
@@ -215,10 +236,8 @@ const Projects = () => {
             </p>
           </div>
 
-          {/* Filter Controls - Right Side */}
           <div className="ms-auto" ref={dropdownRef}>
             
-            {/* Desktop: Filter Buttons */}
             <div className="d-none d-lg-flex gap-2 bg-dark p-1 rounded-5">
               {['all', 'Frontend', 'Full Stack'].map((filter) => (
                 <button
@@ -241,7 +260,6 @@ const Projects = () => {
               ))}
             </div>
 
-            {/* Mobile/Tablet: Dropdown */}
             <div className="d-lg-none position-relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -322,10 +340,8 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Projects Slider */}
         <div className="position-relative" style={{ padding: '0 30px' }}>
           
-          {/* Left Arrow */}
           <button
             onClick={scrollLeft}
             className="position-absolute d-flex align-items-center justify-content-center projects-arrow d-none d-sm-flex"
@@ -341,7 +357,6 @@ const Projects = () => {
             <FaArrowLeft size={14} />
           </button>
 
-          {/* Right Arrow */}
           <button
             onClick={scrollRight}
             className="position-absolute d-flex align-items-center justify-content-center projects-arrow d-none d-sm-flex"
@@ -357,7 +372,6 @@ const Projects = () => {
             <FaArrowRight size={14} />
           </button>
 
-          {/* Projects Container */}
           <div 
             ref={containerRef}
             id="projects-container"
@@ -428,7 +442,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* CSS Styles */}
         <style>{`
           #projects-container::-webkit-scrollbar { display: none; }
           .projects-arrow { transition: all 0.3s ease; }
@@ -440,7 +453,6 @@ const Projects = () => {
 
       </div>
 
-      {/* Light Mode CSS */}
       <style>{`
         body.light-mode .projects-section { background-color: #ffffff !important; }
         body.light-mode .projects-title { color: #021A54 !important; }
