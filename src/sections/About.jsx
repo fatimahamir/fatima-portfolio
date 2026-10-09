@@ -6,7 +6,7 @@ const AboutMe = () => {
 
   const stats = [
     { value: '8+', label: 'Web Projects' },
-    { value: '2', label: 'Internships Completed' },
+    { value: '4', label: 'Internships Completed' },
     { value: '10+', label: 'Github Repos' },
     { value: '24/7', label: 'Availability' }
   ];
@@ -30,28 +30,12 @@ const AboutMe = () => {
               About <span style={{ color: "#FF85BB" }}>Me</span>
             </h2>
 
-            <p className="mb-3 about-text" style={{ 
-              color: "var(--text-secondary, rgba(255,255,255,0.7))",
-              lineHeight: "1.8", 
-              fontSize: "clamp(0.9rem, 3vw, 1rem)" 
-            }}> 
-              I am a dedicated <strong style={{ color: "var(--text-primary, #ffffff)" }}>Computer Science Student</strong> & <strong style={{ color: "var(--text-primary, #ffffff)" }}>MERN Stack Developer</strong> based in Lahore, Pakistan. I enjoy building responsive, user-friendly, and visually appealing web applications that combine clean design with real-world functionality.
-            </p>
-
-            <p className="mb-3 about-text" style={{ 
+            <p className="mb-4 about-text text-justify" style={{ 
               color: "var(--text-secondary, rgba(255,255,255,0.7))",
               lineHeight: "1.8", 
               fontSize: "clamp(0.9rem, 3vw, 1rem)" 
             }}>
-              Through <strong style={{ color: "var(--text-primary, #ffffff)" }}>academic</strong> and <strong style={{ color: "var(--text-primary, #ffffff)" }}>Personal Projects</strong> I've gained hands-on experience in full-stack development. I'm a continuous learner, always exploring new technologies and My goal is to create impactful solutions while growing my career in freelancing and the tech industry.
-            </p>
-
-            <p className="mb-4 about-text" style={{ 
-              color: "var(--text-secondary, rgba(255,255,255,0.7))",
-              lineHeight: "1.8", 
-              fontSize: "clamp(0.9rem, 3vw, 1rem)" 
-            }}>
-              With <strong style={{ color: "var(--text-primary, #ffffff)" }}>1.5 years</strong> of experience in web development, I have acquired the skills and knowledge necessary to make your project a success. I love turning complex problems into simple, beautiful designs.
+              I am a dedicated <strong style={{ color: "var(--text-primary, #ffffff)" }}>Computer Science student</strong> and <strong style={{ color: "var(--text-primary, #ffffff)" }}>Software Developer</strong> based in Lahore, Pakistan, passionate about building practical, scalable, and user-friendly digital solutions. Through internships and personal projects, I have gained hands-on experience in <strong style={{ color: "var(--text-primary, #ffffff)" }}>full-stack web development, frontend development, and application development</strong>, with a focus on creating responsive interfaces, integrating APIs, and building functional web applications. I enjoy solving real-world problems, exploring new technologies, and continuously improving my technical and problem-solving skills. Alongside software development, I am expanding my knowledge of <strong style={{ color: "var(--text-primary, #ffffff)" }}>Artificial Intelligence and Machine Learning</strong>, exploring their fundamentals and practical applications. My long-term goal is to grow as a versatile software developer while exploring emerging fields such as <strong style={{ color: "var(--text-primary, #ffffff)" }}>Generative AI and Agentic AI</strong> to build intelligent and impactful digital products.
             </p>
 
             {/* Stats with Pipe Separator - Responsive */}
@@ -168,10 +152,10 @@ const AboutMe = () => {
               
               <div className="row g-3">
                 {[
-                  { icon: '🌐', title: 'Web Development', desc: 'Custom responsive websites & web apps', color: '#FF85BB' },
-                  { icon: '📱', title: 'Frontend Dev', desc: 'Reactjs and Bootstrap', color: '#61DAFB' },
-                  { icon: '🗄️', title: 'Database Design', desc: 'MongoDB, Mongodb Atlas', color: '#4DB33D' },
-                  { icon: '💼', title: 'Freelance', desc: 'End-to-end project delivery', color: '#9C27B0' }
+                  { icon: '💻', title: 'Software Development', desc: 'Building scalable web and mobile applications with modern tech stacks.', color: '#FF85BB' },
+                  { icon: '🎨', title: 'Design to Code', desc: 'Converting Figma, XD, and design mockups into pixel-perfect responsive code.', color: '#61DAFB' },
+                  { icon: '🔗', title: 'API Integration', desc: 'REST API integration and frontend-backend connectivity.', color: '#F7931E' },
+                  { icon: '✨', title: 'UI Development', desc: 'Building clean, modern, and responsive user interfaces using React.js and Bootstrap.', color: '#9C27B0' }
                 ].map((service, idx) => (
                   <div key={idx} className="col-12 col-md-6">
                     <div className="p-3 rounded-3 h-100" style={{

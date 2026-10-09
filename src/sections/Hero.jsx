@@ -10,13 +10,14 @@ const Hero = () => {
   const [showCursor, setShowCursor] = useState(true);
 
   const fullTexts = [
-    "Computer Science Student ",
-    "Website Developer ",
-  ];
+  "Computer Science Student ",
+  "Software Developer ",
+  "Aspiring AI Engineer ",
+];
 
   const cvFile = '/resume.pdf';
 
-  // Typing animation with rotation
+
   useEffect(() => {
     const currentText = fullTexts[textIndex];
     let timer;
