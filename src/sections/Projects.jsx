@@ -4,7 +4,6 @@ import hospital from '../assets/hospital1.png';
 import school from '../assets/school.png';
 import airport from '../assets/airport.png';
 import taskify from '../assets/taskify.png';
-import counter from '../assets/counter.png';
 import stock from '../assets/stock2.png';
 import hiree from '../assets/hiree.png';
 import smartmarket from '../assets/smartmarket.png';

@@ -214,7 +214,7 @@ const AboutMe = () => {
                     borderRadius: "50%", 
                     display: "inline-block"
                   }}></span>
-                  <span className="fw-semibold position-relative" style={{ color: "#ffffff", fontSize: "0.7rem", letterSpacing: "1px" }}>OPEN FOR WORK</span>
+                  <span className="fw-semibold position-relative" style={{ color: "#ffffff", fontSize: "0.7rem", letterSpacing: "1px" }}>OPEN TO OPPORTUNITIES</span>
                 </div>
               </div>
 

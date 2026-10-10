@@ -1,5 +1,8 @@
+
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+
 import Navbar from './components/Navbar';
 import './App.css';
 import Hero from './sections/Hero';
@@ -13,18 +16,18 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      
-    
       <div className="full-screen-bg">
         <Navbar />
-          <Hero/>
+        <Hero />
       </div>
-      <AboutMe/>
-      <Skills/>
-       <Projects/>
-       <Contact/>
-       <Footer/>
-      
+
+      <AboutMe />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+
+      <Analytics />
     </Router>
   );
 }

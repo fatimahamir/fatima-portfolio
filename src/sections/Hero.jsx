@@ -142,7 +142,7 @@ const Hero = () => {
                   display: "inline-block",
                   animation: "pulse 2s infinite",
                 }}></span>
-                <span style={{ color: "rgba(255,255,255,0.85)", fontSize: "0.85rem", fontWeight: "500" }}>OPEN TO WORK</span>
+                <span style={{ color: "rgba(255,255,255,0.85)", fontSize: "0.85rem", fontWeight: "500" }}>OPEN TO OPPORTUNITIES</span>
               </div>
               
               {/* Divider */}
